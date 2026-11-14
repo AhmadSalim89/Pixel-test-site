@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Pixel Test Site</title>
+<!-- GTM head snippet goes here, right after this tag -->
+</head>
+<body>
+<!-- GTM body snippet goes here, right after this tag -->
+
+<h1>Course Registration (test)</h1>
+<form id="leadForm">
+  <input type="text" placeholder="Name" required>
+  <input type="email" placeholder="Email" required>
+  <button type="submit">Register</button>
+</form>
+<p id="confirmMsg" style="display:none;">Thanks — you're registered.</p>
+
+<script>
+document.getElementById('leadForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  document.getElementById('confirmMsg').style.display = 'block';
+  window.dataLayer = window.dataLayer || [];
+  dataLayer.push({ event: 'generate_lead' });
+});
+</script>
+</body>
+</html>
